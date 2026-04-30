@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 font-sans antialiased bg-deep-teal text-white;
+  }
+  
+  h1, h2, h3 {
+    @apply font-sans font-medium;
+  }
+  
+  h1 {
+    @apply text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-2xl lg:text-3xl;
+  }
+  
+  /* Amharic text adjustments for taller characters */
+  html[lang="am"] {
+    h1, h2, h3, h4, h5, h6 {
+      @apply leading-tight;
+    }
+    
+    p, span, div {
+      @apply leading-relaxed;
+    }
+    
+    /* Navigation adjustments for Amharic */
+    nav a {
+      @apply leading-relaxed py-1;
+    }
+    
+    /* Service cards and content areas */
+    .text-lg, .text-xl {
+      @apply leading-relaxed;
+    }
+    
+    /* Form inputs with Amharic text */
+    input, textarea {
+      @apply leading-relaxed;
+    }
+  }
+}
+
+@layer components {
+  .nav-divider {
+    @apply w-full h-px bg-white opacity-20 my-2;
+  }
+  
+  .service-icon {
+    @apply w-24 h-24 rounded-full bg-deep-teal border-4 border-deep-teal flex items-center justify-center relative;
+  }
+  
+  .service-icon::before {
+    content: '';
+    @apply absolute inset-0 rounded-full border-t-4 border-l-4 border-r-4 border-b-0 border-golden-yellow transform rotate-45;
+  }
+}
