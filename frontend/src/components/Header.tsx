@@ -5,7 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { useState, useEffect, useRef } from 'react';
 
 const Header = () => {
-  const { t, language } = useTranslation();
+  const { language } = useTranslation();
   const { setLanguage } = useLanguage();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);

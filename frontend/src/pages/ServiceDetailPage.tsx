@@ -169,7 +169,7 @@ const ServiceDetailPage = () => {
                 <div className="w-1/2 rounded-r-full overflow-hidden">
                   <img 
                     src={currentServiceData?.image}
-                    alt={currentServiceData?.title || 'Service image'}
+                    alt={currentServiceData?.title?.[language] || 'Service image'}
                     className="w-full h-full object-cover"
                   />
                 </div>
