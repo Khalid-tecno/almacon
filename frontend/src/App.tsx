@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
@@ -15,13 +16,15 @@ import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
 
 function AppContent() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="relative min-h-screen flex flex-col bg-deep-teal">
       {/* Persistent Header */}
-      <Header />
+      <Header isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
       
       {/* Mobile Navigation */}
-      <MobileNavigation />
+      <MobileNavigation isOpen={isMobileMenuOpen} setIsOpen={setIsMobileMenuOpen} />
       
       {/* Persistent Navigation */}
       <Navigation />

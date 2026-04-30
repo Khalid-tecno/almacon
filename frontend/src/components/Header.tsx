@@ -1,10 +1,15 @@
 
-import { Globe, ChevronDown, Search, Menu } from 'lucide-react';
+import { Globe, ChevronDown, Search, Menu, X } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useState, useEffect, useRef } from 'react';
 
-const Header = () => {
+interface HeaderProps {
+  isMobileMenuOpen: boolean;
+  setIsMobileMenuOpen: (isOpen: boolean) => void;
+}
+
+const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
   const { language } = useTranslation();
   const { setLanguage } = useLanguage();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -108,9 +113,12 @@ const Header = () => {
               )}
             </div>
 
-            {/* Hamburger Menu (placeholder for navigation) */}
-            <button className="flex items-center justify-center text-white hover:text-golden-yellow transition-colors bg-white bg-opacity-10 px-3 py-2 rounded-lg min-h-[44px] min-w-[44px] active:scale-95 active:bg-opacity-30 cursor-pointer">
-              <Menu size={20} />
+            {/* Hamburger Menu */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="bg-golden-yellow text-deep-teal p-3 rounded-lg shadow-lg hover:bg-opacity-90 transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center"
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
 

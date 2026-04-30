@@ -1,12 +1,14 @@
-import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 
-const MobileNavigation = () => {
+interface MobileNavigationProps {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+}
+
+const MobileNavigation = ({ isOpen, setIsOpen }: MobileNavigationProps) => {
   const { t } = useTranslation();
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { path: '/', label: t('nav.home') },
@@ -34,16 +36,6 @@ const MobileNavigation = () => {
 
   return (
     <>
-      {/* Mobile menu button */}
-      <div className="md:hidden fixed top-4 right-4 z-50">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="bg-golden-yellow text-deep-teal p-3 rounded-lg shadow-lg hover:bg-opacity-90 transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
       {/* Mobile navigation overlay */}
       {isOpen && (
         <div className="md:hidden fixed inset-0 z-40 bg-deep-teal bg-opacity-95">
