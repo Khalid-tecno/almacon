@@ -109,6 +109,16 @@ export const translations: TranslationDictionary = {
     en: 'Welcome to Almacon',
     am: 'እንኳን ወደ አልማኮን በደህና መጡ'
   },
+
+  // Landing Page
+  'landing.slogan': {
+    en: 'Building Quality, Impacting Thousands!',
+    am: 'በጥራት ለሺህዎች!'
+  },
+  'landing.mission': {
+    en: 'A Grade-1 Enterprise with a Soul. We deliver world-class infrastructure and real estate while funding Ethiopia\'s future.',
+    am: 'ደረጃ-1 የኮንስትራክሽን ድርጅት ከማህበራዊ ኃላፊነት ጋር። ዘመናዊ መሰረተ ልማቶችን እና ሪል እስቴቶችን እንገነባለን።'
+  },
   'home.tagline': {
     en: 'Your trusted partner in construction, real estate, and building solutions. We deliver excellence in every project with innovation and expertise.',
     am: 'በግንባታ፣ ሪል እስቴት እና የህንጻ መፍትሄዎች የሚታመኑ አጋርዎ። በእያንዳንዱ ፕሮጀክት በንድፍን እና በልምድ አክለንነት ውጤታማነትን እናደርሳለን።'

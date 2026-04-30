@@ -80,35 +80,9 @@ const ServiceDetailPage = () => {
 
   return (
     <div className="min-h-screen" style={{backgroundColor: '#1a2e35', fontFamily: 'Inter, sans-serif'}}>
-      {/* Hide only fixed side navigation on this page, keep original header */}
-      <style>
-        {`
-          nav.fixed.left-0, nav.fixed.right-0 {
-            display: none !important;
-          }
-          header.absolute.top-0 {
-            position: relative !important;
-            padding-top: 0 !important;
-          }
-        `}
-      </style>
-      {/* Centered Navigation Links */}
-      <header className="px-8 py-6 relative z-50">
-        <nav className="flex justify-center items-center max-w-6xl mx-auto">
-          <div className="flex space-x-8">
-            <Link to="/" className="text-white text-lg hover:text-yellow-600 transition-colors">{t('nav.home')}</Link>
-            <Link to="/projects" className="text-white text-lg hover:text-yellow-600 transition-colors">{t('nav.projects')}</Link>
-            <Link to="/portfolio" className="text-white text-lg hover:text-yellow-600 transition-colors">{t('nav.portfolio')}</Link>
-            <Link to="/services" className="text-white text-lg hover:text-yellow-600 transition-colors">{t('nav.services')}</Link>
-            <Link to="/about" className="text-white text-lg hover:text-yellow-600 transition-colors">{t('nav.about')}</Link>
-            <Link to="/testimonials" className="text-white text-lg hover:text-yellow-600 transition-colors">{t('nav.testimonials')}</Link>
-            <Link to="/contact" className="text-white text-lg hover:text-yellow-600 transition-colors">{t('nav.contact')}</Link>
-          </div>
-        </nav>
-      </header>
 
       {/* Back to Services Button */}
-      <div className="px-8 pt-8 relative z-50">
+      <div className="px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-28">
         <Link 
           to="/services" 
           className="inline-flex items-center text-yellow-600 hover:text-white transition-colors duration-200 font-medium relative z-50"
@@ -121,40 +95,40 @@ const ServiceDetailPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="px-8 pb-16">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           {/* Left Content Section */}
           <div className="flex-1 space-y-8">
             {/* Building/Real Estate Icon */}
             <div className="flex justify-center lg:justify-start">
-              <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
               </svg>
             </div>
 
             {/* Header */}
-            <h1 className="text-4xl lg:text-5xl font-bold text-white text-center lg:text-left">
+            <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white text-center lg:text-left leading-tight">
               {currentServiceData?.title?.[language] || service?.name}
             </h1>
 
             {/* White Card with Diagonal Cut */}
-            <div className="bg-white p-8 max-w-md mx-auto lg:mx-0 relative" style={{clipPath: 'polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%)'}}>
-              <h2 className="text-2xl font-bold mb-4 text-black">{currentServiceData?.title?.[language] || service?.name}</h2>
+            <div className="bg-white p-6 sm:p-8 max-w-md mx-auto lg:mx-0 relative" style={{clipPath: 'polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%)'}}>
+              <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-black">{currentServiceData?.title?.[language] || service?.name}</h2>
               <p className="text-gray-700 leading-relaxed">
                 {currentServiceData?.description?.[language] || service?.description}
               </p>
             </div>
           </div>
 
-          {/* Central Decorative Triangle */}
-          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+          {/* Central Decorative Triangle - Hidden on mobile */}
+          <div className="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
             <div className="w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent border-b-[50px] border-b-yellow-600 opacity-80"></div>
           </div>
 
           {/* Right Graphic Element */}
           <div className="flex-1 flex items-center justify-center relative">
             {/* Large Circular Composition */}
-            <div className="relative w-80 h-80 lg:w-96 lg:h-96">
+            <div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96">
               {/* Outer Transparent Border */}
               <div className="absolute inset-0 rounded-full border-4 border-yellow-600 opacity-20"></div>
               
@@ -162,7 +136,7 @@ const ServiceDetailPage = () => {
               <div className="absolute inset-4 rounded-full border-2 border-yellow-600 opacity-30"></div>
               
               {/* Main Circle */}
-              <div className="absolute inset-8 rounded-full overflow-hidden flex">
+              <div className="absolute inset-6 sm:inset-8 lg:inset-8 rounded-full overflow-hidden flex">
                 {/* C-Shape Gold Ring */}
                 <div className="w-1/2 bg-yellow-600 rounded-l-full"></div>
                 {/* Service Image */}

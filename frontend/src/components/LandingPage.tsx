@@ -6,21 +6,20 @@ const LandingPage: React.FC = () => {
   const { t } = useTranslation();
   
   return (
-    <section className="landing-hero">
+    <section className="hero-section">
       <div className="hero-content">
-        <div className="top-left-diagonal">
-          <div className="city-overlay">
-            <div className="logo-o">O</div>
-            <div className="main-headline">
-              {t('landing.mainHeadline')}
-            </div>
+        <div className="hero-text">
+          <h1 className="slogan">{t('landing.slogan')}</h1>
+          <p className="mission">{t('landing.mission')}</p>
+        </div>
+        
+        <div className="triangle-wrapper">
+          <div className="triangle-container">
+            <img src="/landing_image.png" alt="landing" />
           </div>
-        </div>
-        <div className="bottom-right-diagonal">
-          <div className="decorative-triangle"></div>
-        </div>
-        <div className="brand-text">
-          {t('landing.brandText')}
+
+          <div className="triangle-gap"></div>
+          <div className="triangle-accent"></div>
         </div>
       </div>
     </section>
