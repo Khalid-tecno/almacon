@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply m-0 font-sans antialiased bg-deep-teal text-white;
+    @apply m-0 font-sans antialiased bg-primary text-white;
   }
   
   h1, h2, h3 {
@@ -52,11 +52,52 @@
   }
   
   .service-icon {
-    @apply w-24 h-24 rounded-full bg-deep-teal border-4 border-deep-teal flex items-center justify-center relative;
+    @apply w-24 h-24 rounded-full bg-primary border-4 border-primary flex items-center justify-center relative;
   }
   
   .service-icon::before {
     content: '';
-    @apply absolute inset-0 rounded-full border-t-4 border-l-4 border-r-4 border-b-0 border-golden-yellow transform rotate-45;
+    @apply absolute inset-0 rounded-full border-t-4 border-l-4 border-r-4 border-b-0 border-secondary transform rotate-45;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white font-semibold py-3 px-8 rounded-lg shadow-sm transition-all duration-300;
+  }
+  .btn-primary:hover {
+    @apply bg-primary-700 shadow-md;
+  }
+  .btn-primary:active {
+    @apply bg-primary-800;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-primary-900 font-bold py-3 px-8 rounded-lg shadow-sm transition-all duration-300;
+  }
+  .btn-secondary:hover {
+    @apply bg-secondary-600 shadow-md;
+  }
+  .btn-secondary:active {
+    @apply bg-secondary-700;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary font-semibold py-3 px-8 rounded-lg transition-all duration-300;
+  }
+  .btn-outline:hover {
+    @apply bg-primary-50;
+  }
+  .btn-outline:active {
+    @apply bg-primary-100;
+  }
+
+  .input-field {
+    @apply w-full p-4 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-800 placeholder-gray-400 min-h-[48px] transition duration-300;
+  }
+
+  .card-base {
+    @apply bg-white rounded-xl shadow-md transition-shadow duration-300 border border-gray-100 overflow-hidden;
+  }
+  .card-base:hover {
+    @apply shadow-xl;
   }
 }

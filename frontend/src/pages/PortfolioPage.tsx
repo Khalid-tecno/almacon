@@ -9,7 +9,7 @@ const PortfolioPage = () => {
   const portfolioProjects = getTranslatedPortfolio(language);
 
   return (
-    <div className="min-h-screen bg-deep-teal pt-20 pb-16">
+    <div className="min-h-screen bg-primary pt-20 pb-16">
       <div className="container mx-auto px-8">
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -28,7 +28,7 @@ const PortfolioPage = () => {
               onClick={() => navigate(`/portfolio/${project.id}`)}
             >
               {/* Project Card */}
-              <div className="bg-white bg-opacity-10 rounded-lg overflow-hidden backdrop-blur-sm border border-transparent group-hover:border-golden-yellow transition-all duration-300">
+              <div className="bg-white bg-opacity-10 rounded-lg overflow-hidden backdrop-blur-sm border border-transparent group-hover:border-secondary transition-all duration-300">
                 {/* Project Image */}
                 <div className="relative h-64 overflow-hidden">
                   <img 
@@ -42,7 +42,7 @@ const PortfolioPage = () => {
                   />
                   
                   {/* Hover Overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-t from-golden-yellow to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-end p-4`}>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-secondary to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-end p-4`}>
                     <div className="text-black">
                       <p className="text-sm font-semibold">{t('portfolio.viewDetails')}</p>
                     </div>
@@ -51,7 +51,7 @@ const PortfolioPage = () => {
 
                 {/* Project Info */}
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-golden-yellow transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-secondary transition-colors duration-300">
                     {project.title}
                   </h3>
                   <p className="text-gray-400 text-sm mb-3">{project.category}</p>
@@ -84,7 +84,7 @@ const PortfolioPage = () => {
               </div>
 
               {/* Geometric Hover Effect */}
-              <div className={`absolute -inset-1 border-2 border-golden-yellow rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform rotate-1`}></div>
+              <div className={`absolute -inset-1 border-2 border-secondary rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform rotate-1`}></div>
             </div>
           ))}
         </div>

@@ -6,7 +6,7 @@ const ServicesPage = () => {
   const { t, language } = useTranslation();
   const services = getTranslatedServices(language);
   return (
-    <div className="min-h-screen bg-deep-teal">
+    <div className="min-h-screen bg-primary">
       {/* Header Banner with Diagonal Cut */}
       <div className="relative h-96 overflow-hidden">
         <img 
@@ -16,7 +16,7 @@ const ServicesPage = () => {
         />
         {/* Diagonal cut overlay revealing teal background */}
         <div 
-          className="absolute top-0 right-0 w-full h-full bg-deep-teal"
+          className="absolute top-0 right-0 w-full h-full bg-primary"
           style={{
             clipPath: 'polygon(85% 0, 100% 0, 100% 100%, 0 100%)'
           }}
@@ -35,7 +35,7 @@ const ServicesPage = () => {
               to={`/services/${service.id}`}
               className="group cursor-pointer transform transition-all duration-300 hover:scale-105"
             >
-              <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-8 text-center hover:bg-opacity-20 transition-all">
+              <div className="card-base p-8 text-center h-full">
                 {/* Service Icon */}
                 <div className="service-icon mx-auto mb-6 relative">
                   <div className="text-4xl z-10 relative">
@@ -44,12 +44,12 @@ const ServicesPage = () => {
                 </div>
                 
                 {/* Service Name */}
-                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-golden-yellow transition-colors">
+                <h3 className="text-xl font-semibold text-primary-900 mb-4 group-hover:text-secondary transition-colors">
                   {service.name}
                 </h3>
                 
                 {/* Service Description */}
-                <p className="text-gray-300 text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {service.description}
                 </p>
               </div>
@@ -69,15 +69,15 @@ const ServicesPage = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-golden-yellow text-4xl font-bold mb-2">15+</div>
+              <div className="text-secondary text-4xl font-bold mb-2">15+</div>
               <div className="text-white font-medium">{t('ui.yearsExperience')}</div>
             </div>
             <div className="text-center">
-              <div className="text-golden-yellow text-4xl font-bold mb-2">500+</div>
+              <div className="text-secondary text-4xl font-bold mb-2">500+</div>
               <div className="text-white font-medium">{t('ui.projectsCompleted')}</div>
             </div>
             <div className="text-center">
-              <div className="text-golden-yellow text-4xl font-bold mb-2">100%</div>
+              <div className="text-secondary text-4xl font-bold mb-2">100%</div>
               <div className="text-white font-medium">{t('ui.clientSatisfaction')}</div>
             </div>
           </div>

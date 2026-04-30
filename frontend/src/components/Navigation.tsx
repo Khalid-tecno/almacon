@@ -23,7 +23,7 @@ const Navigation = () => {
       to={item.path}
       className={`px-4 py-2 rounded-lg transition-all duration-300 ${
         location.pathname === item.path
-          ? 'bg-golden-yellow text-deep-teal font-bold'
+          ? 'bg-secondary text-primary font-bold'
           : 'text-white hover:bg-white hover:bg-opacity-20'
       }`}
     >

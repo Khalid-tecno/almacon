@@ -3,12 +3,12 @@ import { useTranslation } from '../hooks/useTranslation';
 const ContactPage = () => {
   const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-deep-teal py-20">
+    <div className="min-h-screen bg-primary py-20">
       <div className="container mx-auto px-8">
         <h1 className="text-5xl font-bold text-white text-center mb-16">{t('nav.contact')}</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div>
-            <h2 className="text-3xl font-semibold text-golden-yellow mb-8">{t('contact.getInTouch')}</h2>
+            <h2 className="text-3xl font-semibold text-secondary mb-8">{t('contact.getInTouch')}</h2>
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-semibold text-white mb-2">{t('contact.address')}</h3>
@@ -35,13 +35,13 @@ const ContactPage = () => {
             </div>
           </div>
           <div>
-            <h2 className="text-3xl font-semibold text-golden-yellow mb-8">{t('contact.sendUsMessage')}</h2>
+            <h2 className="text-3xl font-semibold text-secondary mb-8">{t('contact.sendUsMessage')}</h2>
             <form className="space-y-6">
               <div>
                 <label className="block text-white mb-2">{t('contact.name')}</label>
                 <input 
                   type="text" 
-                  className="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-golden-yellow"
+                  className="input-field"
                   placeholder={t('contact.namePlaceholder')}
                 />
               </div>
@@ -49,7 +49,7 @@ const ContactPage = () => {
                 <label className="block text-white mb-2">{t('contact.email')}</label>
                 <input 
                   type="email" 
-                  className="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-golden-yellow"
+                  className="input-field"
                   placeholder={t('contact.emailPlaceholder')}
                 />
               </div>
@@ -57,13 +57,13 @@ const ContactPage = () => {
                 <label className="block text-white mb-2">{t('contact.message')}</label>
                 <textarea 
                   rows={6}
-                  className="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-golden-yellow"
+                  className="input-field resize-none"
                   placeholder={t('contact.messagePlaceholder')}
                 />
               </div>
               <button 
                 type="submit"
-                className="bg-golden-yellow text-deep-teal px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
+                className="btn-secondary w-full md:w-auto"
               >
                 {t('contact.submit')}
               </button>

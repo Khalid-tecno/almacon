@@ -13,7 +13,7 @@ const HeroBanner: React.FC = () => {
       />
       {/* Diagonal cut overlay revealing teal background */}
       <div 
-        className="absolute top-0 right-0 w-full h-full bg-deep-teal"
+        className="absolute top-0 right-0 w-full h-full bg-primary"
         style={{
           clipPath: 'polygon(85% 0, 100% 0, 100% 100%, 0 100%)'
         }}

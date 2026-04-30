@@ -19,7 +19,7 @@ function AppContent() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-deep-teal">
+    <div className="relative min-h-screen flex flex-col bg-primary">
       {/* Persistent Header */}
       <Header isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
       

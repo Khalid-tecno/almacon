@@ -26,7 +26,7 @@ const MobileNavigation = ({ isOpen, setIsOpen }: MobileNavigationProps) => {
       onClick={() => setIsOpen(false)}
       className={`block w-full text-left px-4 py-3 rounded-lg transition-all duration-300 min-h-[44px] flex items-center ${
         location.pathname === item.path
-          ? 'bg-golden-yellow text-deep-teal font-bold'
+          ? 'bg-secondary text-primary font-bold'
           : 'text-white hover:bg-white hover:bg-opacity-20'
       }`}
     >
@@ -38,7 +38,7 @@ const MobileNavigation = ({ isOpen, setIsOpen }: MobileNavigationProps) => {
     <>
       {/* Mobile navigation overlay */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 z-40 bg-deep-teal bg-opacity-95">
+        <div className="md:hidden fixed inset-0 z-40 bg-primary bg-opacity-95">
           <div className="flex flex-col h-full pt-20 px-4">
             <nav className="flex-1">
               <div className="space-y-2">

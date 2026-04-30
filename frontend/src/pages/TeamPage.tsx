@@ -162,7 +162,7 @@ const TeamPage: React.FC = () => {
     const isBoardCard = size === 'board';
 
     return (
-      <div className={`${cardSizeClass} mx-auto bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-300 border border-gray-100 min-h-[48px] touch-manipulation`}>
+      <div className={`${cardSizeClass} mx-auto card-base hover:scale-105 hover:shadow-2xl transition-all duration-300 min-h-[48px] touch-manipulation`}>
         {/* Image Section */}
         <div className={`relative ${imageHeightClass} bg-gray-100 rounded-t-2xl`}>
           <img
@@ -185,14 +185,14 @@ const TeamPage: React.FC = () => {
         </div>
         
         {/* Golden divider - thicker for board cards */}
-        <div className={`${isBoardCard ? 'h-1 border-b-4 border-[#FFD700]' : 'h-1 bg-[#FFD700]'}`}></div>
+        <div className={`${isBoardCard ? 'h-1 border-b-4 border-secondary-400' : 'h-1 bg-secondary-400'}`}></div>
         
         {/* Text Section */}
         <div className="p-6 text-center">
-          <h3 className="font-bold text-[#004d4d] text-lg mb-2" style={{ fontFamily: "'Noto Sans', 'Noto Sans Ethiopic', sans-serif" }}>
+          <h3 className="font-bold text-primary-800 text-lg mb-2" style={{ fontFamily: "'Noto Sans', 'Noto Sans Ethiopic', sans-serif" }}>
             {t(member.nameKey)}
           </h3>
-          <p className={`${isBoardCard ? 'text-gray-700' : 'text-[#FFD700]'} text-sm font-semibold mb-3`}>
+          <p className={`${isBoardCard ? 'text-gray-700' : 'text-secondary-400'} text-sm font-semibold mb-3`}>
             {t(member.roleKey)}
           </p>
           {member.descriptionKey && (
@@ -206,21 +206,21 @@ const TeamPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#004d4d]">
+    <div className="min-h-screen bg-primary-800">
       {/* Header Section */}
-      <div className="bg-[#004d4d] text-white py-20 px-6">
+      <div className="bg-primary-800 text-white py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white" style={{ fontFamily: "'Noto Sans', 'Noto Sans Ethiopic', sans-serif" }}>
             {t('team.title')}
           </h1>
-          <p className="text-xl text-[#FFD700] max-w-3xl mx-auto leading-relaxed font-medium" style={{ fontFamily: "'Noto Sans', 'Noto Sans Ethiopic', sans-serif" }}>
+          <p className="text-xl text-secondary-400 max-w-3xl mx-auto leading-relaxed font-medium" style={{ fontFamily: "'Noto Sans', 'Noto Sans Ethiopic', sans-serif" }}>
             {t('team.subtitle')}
           </p>
         </div>
       </div>
 
       {/* Team Sections */}
-      <div className="py-16 px-6 bg-[#004d4d]">
+      <div className="py-16 px-6 bg-primary-800">
         <div className="max-w-7xl mx-auto space-y-24">
           {teamSections.map((section, index) => (
             <section key={index} className="space-y-12">
@@ -229,12 +229,12 @@ const TeamPage: React.FC = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Sans', 'Noto Sans Ethiopic', sans-serif" }}>
                   {t(section.titleKey)}
                 </h2>
-                <div className="w-32 h-1 bg-[#FFD700] mx-auto mb-8"></div>
+                <div className="w-32 h-1 bg-secondary-400 mx-auto mb-8"></div>
               </div>
 
               {/* Golden Yellow divider between sections */}
               {index > 0 && (
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-[#FFD700] to-transparent opacity-50"></div>
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-secondary-400 to-transparent opacity-50"></div>
               )}
 
               {/* Team Members Grid */}

@@ -67,10 +67,10 @@ const ServiceDetailPage = () => {
 
   if (!service) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{backgroundColor: '#1a2e35'}}>
+      <div className="min-h-screen flex items-center justify-center bg-primary-900">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4">{t('serviceDetail.notFound')}</h1>
-          <Link to="/services" className="text-yellow-600 hover:text-white transition-colors">
+          <Link to="/services" className="text-secondary hover:text-white transition-colors">
             {t('serviceDetail.backToServices')}
           </Link>
         </div>
@@ -79,13 +79,13 @@ const ServiceDetailPage = () => {
   }
 
   return (
-    <div className="min-h-screen" style={{backgroundColor: '#1a2e35', fontFamily: 'Inter, sans-serif'}}>
+    <div className="min-h-screen bg-primary-900">
 
       {/* Back to Services Button */}
       <div className="px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-28">
         <Link 
           to="/services" 
-          className="inline-flex items-center text-yellow-600 hover:text-white transition-colors duration-200 font-medium relative z-50"
+          className="inline-flex items-center text-secondary hover:text-white transition-colors duration-200 font-medium relative z-50"
         >
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -122,7 +122,7 @@ const ServiceDetailPage = () => {
 
           {/* Central Decorative Triangle - Hidden on mobile */}
           <div className="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent border-b-[50px] border-b-yellow-600 opacity-80"></div>
+            <div className="w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent border-b-[50px] border-b-secondary opacity-80"></div>
           </div>
 
           {/* Right Graphic Element */}
@@ -130,15 +130,15 @@ const ServiceDetailPage = () => {
             {/* Large Circular Composition */}
             <div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96">
               {/* Outer Transparent Border */}
-              <div className="absolute inset-0 rounded-full border-4 border-yellow-600 opacity-20"></div>
+              <div className="absolute inset-0 rounded-full border-4 border-secondary opacity-20"></div>
               
               {/* Middle Transparent Border */}
-              <div className="absolute inset-4 rounded-full border-2 border-yellow-600 opacity-30"></div>
+              <div className="absolute inset-4 rounded-full border-2 border-secondary opacity-30"></div>
               
               {/* Main Circle */}
               <div className="absolute inset-6 sm:inset-8 lg:inset-8 rounded-full overflow-hidden flex">
                 {/* C-Shape Gold Ring */}
-                <div className="w-1/2 bg-yellow-600 rounded-l-full"></div>
+                <div className="w-1/2 bg-secondary rounded-l-full"></div>
                 {/* Service Image */}
                 <div className="w-1/2 rounded-r-full overflow-hidden">
                   <img 
