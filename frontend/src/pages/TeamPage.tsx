@@ -206,21 +206,40 @@ const TeamPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-primary-800">
-      {/* Header Section */}
-      <div className="bg-primary-800 text-white py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white" style={{ fontFamily: "'Noto Sans', 'Noto Sans Ethiopic', sans-serif" }}>
+    <div className="min-h-screen bg-primary">
+      {/* Hero Header Section */}
+      <div className="relative bg-gradient-to-br from-primary via-primary-700 to-primary-900 text-white py-24 px-6 overflow-hidden">
+        {/* Decorative background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-64 h-64 bg-secondary rounded-full -translate-x-32 -translate-y-32"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full translate-x-48 translate-y-48"></div>
+          <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-secondary rounded-full opacity-50"></div>
+        </div>
+        {/* Golden top accent bar */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary-600 via-secondary to-secondary-600"></div>
+        <div className="relative max-w-6xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-secondary bg-opacity-20 border border-secondary border-opacity-40 rounded-full px-5 py-2 mb-6">
+            <span className="w-2 h-2 bg-secondary rounded-full"></span>
+            <span className="text-secondary text-sm font-semibold tracking-widest uppercase">ALMACON Team</span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white" style={{ fontFamily: "'Noto Sans', 'Noto Sans Ethiopic', sans-serif" }}>
             {t('team.title')}
           </h1>
-          <p className="text-xl text-secondary-400 max-w-3xl mx-auto leading-relaxed font-medium" style={{ fontFamily: "'Noto Sans', 'Noto Sans Ethiopic', sans-serif" }}>
+          <div className="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+          <p className="text-xl text-primary-100 max-w-3xl mx-auto leading-relaxed font-medium" style={{ fontFamily: "'Noto Sans', 'Noto Sans Ethiopic', sans-serif" }}>
             {t('team.subtitle')}
           </p>
+        </div>
+        {/* Bottom wave */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+            <path d="M0 40L60 33.3C120 26.7 240 13.3 360 10C480 6.7 600 13.3 720 18.3C840 23.3 960 26.7 1080 23.3C1200 20 1320 10 1380 5L1440 0V40H0Z" fill="#143d4d"/>
+          </svg>
         </div>
       </div>
 
       {/* Team Sections */}
-      <div className="py-16 px-6 bg-primary-800">
+      <div className="py-16 px-6 bg-primary">
         <div className="max-w-7xl mx-auto space-y-24">
           {teamSections.map((section, index) => (
             <section key={index} className="space-y-12">
@@ -229,12 +248,12 @@ const TeamPage: React.FC = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Sans', 'Noto Sans Ethiopic', sans-serif" }}>
                   {t(section.titleKey)}
                 </h2>
-                <div className="w-32 h-1 bg-secondary-400 mx-auto mb-8"></div>
+                <div className="w-32 h-1 bg-gradient-to-r from-secondary-600 via-secondary to-secondary-600 mx-auto mb-8 rounded-full"></div>
               </div>
 
               {/* Golden Yellow divider between sections */}
               {index > 0 && (
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-secondary-400 to-transparent opacity-50"></div>
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-secondary to-transparent opacity-40"></div>
               )}
 
               {/* Team Members Grid */}
@@ -250,6 +269,11 @@ const TeamPage: React.FC = () => {
             </section>
           ))}
         </div>
+      </div>
+
+      {/* Bottom CTA Banner */}
+      <div className="bg-gradient-to-r from-secondary-700 via-secondary to-secondary-600 py-10 px-6 text-center">
+        <p className="text-primary-900 font-bold text-lg">Built on trust. Driven by excellence.</p>
       </div>
     </div>
   );

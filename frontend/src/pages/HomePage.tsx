@@ -404,12 +404,18 @@ const HomePage = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4 sm:px-6 md:px-8 lg:px-16 bg-primary-800">
+      <section className="relative py-20 px-4 sm:px-6 md:px-8 lg:px-16 overflow-hidden" style={{ background: 'linear-gradient(135deg, #18495C 0%, #143d4d 60%, #0f2a35 100%)' }}>
+        {/* Golden top accent bar */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary-600 via-secondary to-secondary-600" />
+        {/* Decorative circles */}
+        <div className="absolute top-0 right-0 w-72 h-72 bg-secondary opacity-5 rounded-full translate-x-36 -translate-y-36 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-secondary opacity-5 rounded-full -translate-x-24 translate-y-24 pointer-events-none" />
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 text-center">
             {t('contact.title')}
           </h2>
-          <p className="text-lg md:text-xl text-gray-300 mb-8 md:mb-12 text-center max-w-3xl mx-auto">
+          <div className="w-20 h-1 bg-secondary mx-auto rounded-full mb-4" />
+          <p className="text-lg md:text-xl text-primary-100 mb-8 md:mb-12 text-center max-w-3xl mx-auto">
             {t('contact.getInTouch')}
           </p>
           
@@ -418,10 +424,10 @@ const HomePage = () => {
             <div className="space-y-8">
               {/* Contact Information Cards */}
               <div className="space-y-6">
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">{t('contact.connect')}</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-secondary mb-6">{t('contact.connect')}</h3>
                 
                 {/* Email Card */}
-                <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-white border-opacity-20 hover:bg-opacity-20 transition duration-300">
+                <div className="bg-primary-800 bg-opacity-60 backdrop-blur-md rounded-xl p-5 border-l-4 border-secondary hover:bg-opacity-80 transition duration-300">
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
                       <svg className="w-6 h-6 text-primary-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -429,14 +435,14 @@ const HomePage = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-gray-300 text-sm mb-1">Email</p>
+                      <p className="text-secondary text-xs font-semibold uppercase tracking-wide mb-1">Email</p>
                       <p className="text-white font-semibold">{t('contact.officialEmail')}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Phone Cards */}
-                <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-white border-opacity-20 hover:bg-opacity-20 transition duration-300">
+                <div className="bg-primary-800 bg-opacity-60 backdrop-blur-md rounded-xl p-5 border-l-4 border-secondary hover:bg-opacity-80 transition duration-300">
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
                       <svg className="w-6 h-6 text-primary-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -444,7 +450,7 @@ const HomePage = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-gray-300 text-sm mb-1">Office Lines</p>
+                      <p className="text-secondary text-xs font-semibold uppercase tracking-wide mb-1">Office Lines</p>
                       <p className="text-white font-semibold">{t('contact.phone1')}</p>
                       <p className="text-white font-semibold">{t('contact.phone2')}</p>
                     </div>
@@ -452,7 +458,7 @@ const HomePage = () => {
                 </div>
 
                 {/* Address Card */}
-                <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-white border-opacity-20 hover:bg-opacity-20 transition duration-300">
+                <div className="bg-primary-800 bg-opacity-60 backdrop-blur-md rounded-xl p-5 border-l-4 border-secondary hover:bg-opacity-80 transition duration-300">
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
                       <svg className="w-6 h-6 text-primary-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -461,14 +467,14 @@ const HomePage = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-gray-300 text-sm mb-1">Address</p>
+                      <p className="text-secondary text-xs font-semibold uppercase tracking-wide mb-1">Address</p>
                       <p className="text-white font-semibold">{t('contact.headOffice')}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Working Hours Card */}
-                <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-white border-opacity-20 hover:bg-opacity-20 transition duration-300">
+                <div className="bg-primary-800 bg-opacity-60 backdrop-blur-md rounded-xl p-5 border-l-4 border-secondary hover:bg-opacity-80 transition duration-300">
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
                       <svg className="w-6 h-6 text-primary-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -476,7 +482,7 @@ const HomePage = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-gray-300 text-sm mb-1">Working Hours</p>
+                      <p className="text-secondary text-xs font-semibold uppercase tracking-wide mb-1">Working Hours</p>
                       <p className="text-white font-semibold">{t('contact.workingHours')}</p>
                     </div>
                   </div>
@@ -485,13 +491,13 @@ const HomePage = () => {
 
               {/* Social Media Links */}
               <div className="space-y-4">
-                <h4 className="text-lg font-bold text-white mb-4">{t('contact.followUs')}</h4>
+                <h4 className="text-lg font-bold text-secondary mb-4">{t('contact.followUs')}</h4>
                 <div className="flex flex-wrap gap-3">
                   <a 
                     href="https://www.facebook.com/share/1KJc6W1BXX/?mibextid=wwXIfr" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 border border-white border-opacity-20 hover:bg-opacity-20 transition duration-300"
+                    className="w-11 h-11 bg-secondary bg-opacity-10 border border-secondary border-opacity-40 rounded-lg flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all duration-200"
                   >
                     <svg width={20} height={20} viewBox="0 0 24 24" fill="#EAAB21">
                       <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="#EAAB21"/>
@@ -501,7 +507,7 @@ const HomePage = () => {
                     href="https://t.me/almacoo" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 border border-white border-opacity-20 hover:bg-opacity-20 transition duration-300"
+                    className="w-11 h-11 bg-secondary bg-opacity-10 border border-secondary border-opacity-40 rounded-lg flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all duration-200"
                   >
                     <svg width={20} height={20} viewBox="0 0 24 24" fill="#EAAB21">
                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.56c-.21 2.27-1.13 7.75-1.6 10.29-.2 1.08-.59 1.44-.97 1.47-.82.07-1.45-.54-2.23-1.06-1.24-.81-1.94-1.32-3.14-2.11-1.39-.91-.49-1.41.3-2.23.21-.21 3.77-3.46 3.83-3.74.01-.04.01-.18-.07-.26s-.21-.03-.3-.02c-.13.02-2.13 1.35-6.01 3.96-.57.39-1.08.58-1.54.57-.51-.01-1.49-.29-2.21-.52-.89-.29-1.59-.44-1.53-.93.03-.25.38-.51 1.05-.78 4.11-1.79 6.84-2.97 8.18-3.54 3.92-1.63 4.73-1.92 5.26-1.93.12 0 .37.03.54.17.14.12.18.28.2.44-.01.06 0 .12-.01.18z" fill="#EAAB21"/>
@@ -511,7 +517,7 @@ const HomePage = () => {
                     href="https://www.linkedin.com/in/የ-ነገየ-አለም-8aa780406" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 border border-white border-opacity-20 hover:bg-opacity-20 transition duration-300"
+                    className="w-11 h-11 bg-secondary bg-opacity-10 border border-secondary border-opacity-40 rounded-lg flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all duration-200"
                   >
                     <svg width={20} height={20} viewBox="0 0 24 24" fill="#EAAB21">
                       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" fill="#EAAB21"/>
@@ -523,7 +529,7 @@ const HomePage = () => {
                     href="https://www.youtube.com/@conofficia" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 border border-white border-opacity-20 hover:bg-opacity-20 transition duration-300"
+                    className="w-11 h-11 bg-secondary bg-opacity-10 border border-secondary border-opacity-40 rounded-lg flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all duration-200"
                   >
                     <svg width={20} height={20} viewBox="0 0 24 24" fill="#EAAB21">
                       <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.62C5.12 20 12 20 12 20s6.88 0 8.6-.38a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" fill="#EAAB21"/>
@@ -534,8 +540,8 @@ const HomePage = () => {
             </div>
 
             {/* Right Column: Contact Form */}
-            <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 sm:p-8 border border-white border-opacity-20">
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">{t('contact.sendUsMessage')}</h3>
+            <div className="bg-primary-800 bg-opacity-60 backdrop-blur-md rounded-xl p-6 sm:p-8 border border-secondary border-opacity-30">
+              <h3 className="text-xl sm:text-2xl font-bold text-secondary mb-6">{t('contact.sendUsMessage')}</h3>
               <form className="space-y-4">
                 <input
                   type="text"
